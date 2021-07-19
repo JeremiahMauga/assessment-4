@@ -1,0 +1,13 @@
+{% block page-title %}
+<h1>All Categories</h1>
+{% endblock %}
+
+<ul>
+  {% for category in category %}
+    <div>
+      <li><a href="{% url 'category_detail' category_id=category.id %}">{{ category.category_name }}</a></li>
+    </div>
+  {% endfor %}
+</ul>
+
+<button type="button" class="btn btn-primary"><a href="{% url 'new_category' %}">Create a new Category</a></button>

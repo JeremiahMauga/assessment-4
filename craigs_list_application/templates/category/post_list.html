@@ -1,0 +1,14 @@
+<div>
+  <h1> {{ category.category_name }} </h1>
+  <ul>
+    {% for post in post %}
+      <div>
+        <h2><a href="{% url 'post_detail' category_id=category.id post_id=post.id %}">{{ post.post_title }}</a></h2>
+      </div>
+    {% endfor %}
+  </ul>
+</div>
+<br>
+<br>
+<br>
+<button><a href="{% url 'new_post' category_id=category.id %}">New Post</a></button>
